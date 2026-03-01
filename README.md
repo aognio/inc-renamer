@@ -13,7 +13,9 @@ Project icon files:
 
 Icon preview:
 
-![inc-renamer icon](assets/images/inc-renamer-icon-256.png)
+<p align="center">
+  <img src="assets/images/inc-renamer-icon-1024.png" alt="inc-renamer icon" width="520" />
+</p>
 
 ## Repository layout
 
