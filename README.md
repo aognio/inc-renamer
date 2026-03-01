@@ -1,21 +1,22 @@
-# inc-renamer monorepo
-
-Cross-platform `*.inc` image-extension repair toolset.
-
-This monorepo contains platform-specific service implementations that watch a folder, detect real image formats by magic bytes, and rename files from `*.inc` to the proper extension.
-
-## Assets
-
-Project icon files:
-
-- `assets/images/inc-renamer-icon-1024.png` (source)
-- `assets/images/inc-renamer-icon-256.png` (resized)
-
-Icon preview:
-
 <p align="center">
   <img src="assets/images/inc-renamer-icon-1024.png" alt="inc-renamer icon" width="520" />
 </p>
+
+# inc-renamer monorepo
+
+`inc-renamer` is a cross-platform background utility suite that continuously fixes wrongly named image files exported as `*.inc`.
+
+It runs as a native startup service on each operating system, watches a target folder (typically Downloads), inspects file signatures (magic bytes), and renames files to the real extension (`.png`, `.jpg`, `.gif`, `.webp`, `.bmp`, `.tiff`, `.heic`, `.heif`) without prompts.
+
+This is especially useful for browser/web extraction workflows (including WhatsApp Web profile-picture exports) where image bytes are correct but filename extensions are lost or mislabeled during download/export.
+
+## What You Get
+
+- Native implementation per platform (macOS, Linux, Windows)
+- Auto-start service integration for each OS (`launchd`, `systemd`, Task Scheduler)
+- Collision-safe renaming (`file-1.png`, `file-2.png`, ...)
+- Plain text operational logs
+- Integration tests and CI builds across all three targets
 
 ## Repository layout
 
