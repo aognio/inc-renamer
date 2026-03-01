@@ -1,0 +1,9 @@
+# Build output
+inc-renamer
+*.o
+
+# Local logs
+*.log
+
+# macOS metadata
+.DS_Store

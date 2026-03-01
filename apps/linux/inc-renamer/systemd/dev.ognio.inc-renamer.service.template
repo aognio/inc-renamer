@@ -1,0 +1,15 @@
+[Unit]
+Description=dev.ognio.inc-renamer
+After=network.target
+
+[Service]
+Type=simple
+User=__USER__
+ExecStart=/usr/local/bin/inc-renamer __WATCH_DIR__ __LOG_PATH__ 2
+Restart=always
+RestartSec=2
+StandardOutput=append:__STDOUT_PATH__
+StandardError=append:__STDERR_PATH__
+
+[Install]
+WantedBy=multi-user.target

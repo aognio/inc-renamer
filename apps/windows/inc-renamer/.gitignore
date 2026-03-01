@@ -1,0 +1,14 @@
+# CMake build directories
+build/
+out/
+
+# Windows binaries/artifacts
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.dll
+*.lib
+
+# Local logs
+*.log

@@ -1,0 +1,9 @@
+# Build output
+inc-renamer
+*.o
+
+# Local logs
+*.log
+
+# Linux/systemd local artifacts
+*.pid
