@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Editors/IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Build artifacts (all apps)
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# app binaries
+apps/**/inc-renamer
+apps/**/bin/
+apps/**/build/

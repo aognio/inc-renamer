@@ -1,0 +1,45 @@
+name: Build and Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build macOS app
+        run: |
+          cd apps/macos/inc-renamer
+          make
+      - name: Test macOS app
+        run: |
+          cd apps/macos/inc-renamer
+          ./tests/integration_test.sh
+
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Linux app
+        run: |
+          cd apps/linux/inc-renamer
+          make
+      - name: Test Linux app
+        run: |
+          cd apps/linux/inc-renamer
+          ./tests/integration_test.sh
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S apps/windows/inc-renamer -B apps/windows/inc-renamer/build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build apps/windows/inc-renamer/build --config Release
+      - name: Test Windows app
+        shell: pwsh
+        run: |
+          ./apps/windows/inc-renamer/tests/integration_test.ps1
